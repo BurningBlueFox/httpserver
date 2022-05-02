@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"httpserver/server"
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("Hello server")
+	server := &server.PlayerServer{}
+	log.Fatal(http.ListenAndServe(":5000", server))
 }
